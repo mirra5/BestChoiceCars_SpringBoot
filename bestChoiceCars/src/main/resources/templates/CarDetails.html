@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>CarLists</title>
+	<style>
+		h1{
+			color : black;
+			
+			font-family: "SIMPSON";
+			font-size: 75px;
+		}
+		table{
+			
+			height: 75%;
+			width: 100%;
+			padding: 40px;
+			color: black;
+			font-size: 25px;
+			background-color: orange;
+			
+		}
+		th, td {
+ 			 border-bottom: 1px solid #ddd;
+		}
+		body{
+			text-align : center;
+			background-color : lightgreen;
+
+		}
+		
+			.button{
+				background-color : white;
+       			 border: none;
+       			 color: darkblue;
+        		padding: 3px 34px;
+        		text-align: center;
+       			 text-decoration: none;       
+        		font-size: 20px;
+        		margin: 2px 2px;
+        		cursor: pointer;
+        		font-style: bold;
+		}
+			input{
+			height: 30px;
+			width: 100px;
+			color: darkblue;
+			font-style: bold;
+			font-size: 20px;
+			
+		}
+	</style>
+</head>
+<body style="text-align: canter">
+	<h1>Best Choice Cars</h1>
+	<p style="color:red;font-size: 40px;">Choose from the below List</p>
+<form action="#" th:action="@{/Success}" method="post" th:object="${bestchoicecars}">
+	<table border="3">
+		<tr>
+			<th></th>
+		<th>Brand</th>
+		<th>Model</th>
+		<th>Year</th>
+		<th>No. Of Kms</th>
+		<th>Price</th>
+		<th>Fuel</th>
+		</tr>
+		<tr th:each="car : ${bestchoicecars}">
+			<td>
+				<input type="radio" name="selectedCar" th:value="${car.model}" required>
+			</td>
+			<td>
+				<label name="brand" th:text="${car.brand}"></label>
+			</td>
+			<td>
+				<label name="model "th:text="${car.model}"></label>
+			</td>
+			<td>
+				<label th:text="${car.year}"></label>
+			</td>
+			<td>
+				<label th:text="${car.km}"></label>
+			</td>
+			<td>
+				<label th:text="${car.price}"></label>
+			</td>
+			<td>
+				<label th:text="${car.fuel}"></label>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">	
+				<input type="Submit" value="Book">
+			</td>
+			<td colspan="3">	
+				<a th:href="@{/}" class="button">Home</a>
+			</td>
+			<td colspan="2">	
+				<a th:href="@{${prev}}" class="button">Back</a>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

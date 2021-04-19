@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Success Page</title>
+	<style>
+		h1{
+			color : black;
+			text-align : center;
+			font-family: "SIMPSON";
+			font-size: 100px;
+		}
+		p{
+			color: darkblue;
+			font-size: 50px;
+
+		}
+		body{
+			background-color : lightgreen;
+		}
+	</style>
+</head>
+<body>
+<h1>Best Choice Cars</h1><br>
+<b>
+<p>Congratulations!!Your booking for the car <span th:text=${selectedCar}></span> has been confirmed. Thanks for reaching out to us.
+<br><br>Have a great day!</p>
+</b>
+</body>
+</html>

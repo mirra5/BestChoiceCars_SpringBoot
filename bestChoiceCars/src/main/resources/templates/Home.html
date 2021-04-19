@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Home page</title>
+	<style>
+		h1{
+			color : black;
+			text-align : center;
+			font-family: "SIMPSON";
+			font-size: 100px;
+		}
+		p{
+			font-size: 50px;
+			text-align :center;
+		}
+		
+		body {
+			background-color : lightgreen;
+			margin: 0;
+			padding: 0;
+}
+	</style>
+</head>
+<body>
+<h1>Welcome to the home page!!!</h1>
+<p>
+	<a th:href="@{/carsByBrand}">Choose Cars by Brand</a>
+</p>
+<p>
+	<a th:href="@{/carsByPrice}">Choose Cars by Price</a>
+</p>
+</body>
+</html>
